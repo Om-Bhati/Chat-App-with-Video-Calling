@@ -25,6 +25,14 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "",
         },
+        yourDomain: {
+            type: String,
+            default: "",
+        },
+        exploringDomain: {
+            type: String,
+            default: "",
+        },
         location: {
             type: String,
             default: "",
