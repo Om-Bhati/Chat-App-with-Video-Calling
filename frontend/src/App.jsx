@@ -1,19 +1,32 @@
 import React from "react";
 import {Route , Routes} from "react-router"
-import toast , {Toaster} from "react-hot-toast"
-import HomePage from "./pages/HomePage";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
-import NotificationsPage from "./pages/NotificationsPage";
-import CallPage from "./pages/CallPage";
-import ChatPage from "./pages/ChatPage";
-import OnboardingPage from "./pages/OnboardingPage";
+import {Toaster} from "react-hot-toast"
+import { useState , useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios"
+
+import HomePage from "./pages/HomePage.jsx";
+import SignUpPage from "./pages/SignUpPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import NotificationsPage from "./pages/NotificationsPage.jsx";
+import CallPage from "./pages/CallPage.jsx";
+import ChatPage from "./pages/ChatPage.jsx";
+import OnboardingPage from "./pages/OnboardingPage.jsx";
+import { axiosInstance } from "./lib/axios.js";
 
 const App = () => {
+  const {data , isLoading , error} = useQuery({
+    queryKey : ["todos"] ,
+    queryFn : async () => {
+      const res = await axiosInstance.get("http://localhost:5001/api/auth/me") ;
+      return res.data ;
+    }
+  })
+  console.log({data}) ;
+  // console.log({isLoading}) ;
+  // console.log({error}) ;
   return (
     <div className= "h-screen" data-theme="night">
-      <button onClick={() => toast.success("Hello world!")}>Create a success toast</button>
-      <button onClick={() => toast.error("Hello world!")}>Create a error toast</button>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/signup" element={<SignUpPage/>} />
