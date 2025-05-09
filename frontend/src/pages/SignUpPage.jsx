@@ -155,7 +155,7 @@ const SignUpPage = () => {
             </div>
 
             <div className="text-center space-y-3 mt-6">
-              <h2 className="text-xl font-semibold">Connect with diff domain worldwide</h2>
+              <h2 className="text-xl font-semibold">Connect with different domain worldwide</h2>
               <p className="opacity-70">
                 Practice and learn diff domains, make friends, and improve your skills together
               </p>
