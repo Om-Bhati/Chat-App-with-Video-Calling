@@ -1,9 +1,9 @@
-import React from 'react'
+import { create } from "zustand";
 
-const useThemeStore = () => {
-  return (
-    <div>useThemeStore</div>
-  )
-}
-
-export default useThemeStore
+export const useThemeStore = create((set) => ({
+  theme: localStorage.getItem("streamify-theme") || "coffee",
+  setTheme: (theme) => {
+    localStorage.setItem("streamify-theme", theme);
+    set({ theme });
+  },
+}));
