@@ -3,7 +3,7 @@
 **Techno-Videochat** is a real-time video chat application that bridges the gap between individuals from different professional and academic domains. Whether you're a developer looking to brainstorm with a designer, a student seeking expert advice, or a startup founder networking with professionals — DomainConnect makes meaningful conversations happen, instantly.
 
 
-![Login Page](/frontend/public/login.png)
+![Login Page](/frontend/public/loginPage.png)
 ![Onboarding](/frontend/public/onBoarding.png)
 ![Homepage ](/frontend/public/homePage.png)
 ![DiffTheme](/frontend/public/diffTheme.png)
